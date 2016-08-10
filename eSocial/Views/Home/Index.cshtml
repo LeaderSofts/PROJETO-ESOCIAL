@@ -1,0 +1,192 @@
+﻿@using Portal.Business.Models;
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Função q carrega os dados e desenha o grafico em pizza
+
+      function drawChart() {
+
+      // Criar tipo data table
+      var data = new google.visualization.DataTable();
+     //no caso do grafico  pizza possui duas colunas, com duas colunas
+      data.addColumn('string', 'Bebida');
+      data.addColumn('number', 'Quantidade');
+     //linha da tabela
+     data.addRows([
+        ['CORRETOS', @ResumoValidacao.CalcularPorcentagem(ResumoValidacao.CountValid, ResumoValidacao.CountTotal)],
+        ['INVÁLIDOS', @ResumoValidacao.CalcularPorcentagem(ResumoValidacao.CountInvalid, ResumoValidacao.CountTotal)],
+        ['BRANCOS', @ResumoValidacao.CalcularPorcentagem(ResumoValidacao.CountEmpty, ResumoValidacao.CountTotal)]]);
+
+      //  http://code.google.com/apis/chart/interactive/docs/gallery/piechart.html
+      var options = {
+                     'titleTextStyle': {fontSize: 16},
+                     'legend':{position: 'left', textStyle: {color: 'black', fontSize: 12}},
+                     'slices': {3: {color: 'black'}},
+              'width':420, 
+                     'height':200};
+
+      // desenho do grafico
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+</script>
+
+<h5>Recursos Humanos - Departamento Pessoal</h5><hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">@Html.ActionLink("2100 - Cadastramento Inicial do Vinculo", "About", "Home")</div>
+            <div class="panel-body">
+                <div id="chart_div"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">@Html.ActionLink("1010 - Tabela de Rubricas", "About", "Home")</div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1020 - Lotações</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1030 - Cargos</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1040 - Funções</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1050 - Horários - Turnos de Trabalho</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1060 - Estabelecimentos  Obras de Construção Civil</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1070 - Processos Administrativos - Judiciais</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="@Url.Action("Detalhe", "Home")">1000 - Informações do Empregador - Contribuinte</a></div>
+            <div class="panel-body">
+                <img src="~/Images/grafico.jpg" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SSO-->
+<h5>SSO</h5><hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">PCMSO</div>
+            <div class="panel-body">
+                <img src="~/Images/graficoPalito2.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">PPRA</div>
+            <div class="panel-body" style="height:187px;">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">20</span>
+                        Riscos Medidos:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">30</span>
+                        Medições a Vencer:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">100</span>
+                        Medições Vencidas:
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Fiscal-->
+
+<div class="row">
+    <div class="col-md-4">
+        <h5>Fiscal - Financeiro</h5><hr />
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge">14</span>
+                Notas Fiscais com Retênção INSS:
+            </li>
+            <li class="list-group-item">
+                <span class="badge">2</span>
+                Valor INSS Pedido:
+            </li>
+        </ul>
+    </div>
+    <h5>TI</h5><hr />
+    <div class="col-md-4">
+        
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge">14</span>
+                Quantidade de Eventos Gerados:
+            </li>
+            <li class="list-group-item">
+                <span class="badge">2</span>
+                Arquivos Enviados ao eSocial:
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge">1</span>
+                Arquivos Recusados:
+            </li>
+            <li class="list-group-item">
+                <span class="badge">1</span>
+                Arquivos não envidos:
+            </li>
+        </ul>
+    </div>
+</div>

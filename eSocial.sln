@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSocial", "eSocial\eSocial.csproj", "{2692E166-6BFC-4283-B980-A77C067C585C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Business", "Portal.Business\Portal.Business.csproj", "{F60668BF-4375-469B-8380-215D3AF6A8DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2692E166-6BFC-4283-B980-A77C067C585C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2692E166-6BFC-4283-B980-A77C067C585C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2692E166-6BFC-4283-B980-A77C067C585C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2692E166-6BFC-4283-B980-A77C067C585C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60668BF-4375-469B-8380-215D3AF6A8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60668BF-4375-469B-8380-215D3AF6A8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60668BF-4375-469B-8380-215D3AF6A8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60668BF-4375-469B-8380-215D3AF6A8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
