@@ -151,7 +151,7 @@ namespace Portal.Business.Repositories
                     }
 
                     //list País de Nascimento
-                    if (!Validate.IsPaisNascto(item.cep, item.cod_pais_Nascto, out error))
+                    /*if (!Validate.IsPaisNascto(item.cep, item.cod_pais_Nascto, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -160,7 +160,7 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
                     //list País de Nacionalidade
                     if (!Validate.IsPaisNac(item.cep, item.cod_pais, out error))
@@ -212,7 +212,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Nº Ric
+                    //list Nº Ric
                     if (!Validate.ISNrRic(item.numeroric, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -224,7 +224,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Orgão Emissor Ric
+                   // list Orgão Emissor Ric
                     if (!Validate.ISOrgEmissorRic(item.orgemissorric, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -236,7 +236,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Data Emissao Ric
+                   // list Data Emissao Ric
                     if (!Validate.IsDtEmissaoRic(item.dtemissaoric, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -248,7 +248,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list numero RG
+                   // list numero RG
                     if (!Validate.IsNRg(item.rg, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -260,7 +260,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Orgão Emissor RG
+                  //  list Orgão Emissor RG
                     if (!Validate.IsOrgEmissorRg(item.orgemissorident, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -272,7 +272,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Data de Expedição RG
+                  //  list Data de Expedição RG
                     if (!Validate.IsDtExpedicaoRg(item.data_em_ident, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -284,7 +284,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list numero da RNE
+                  //  list numero da RNE
                     if (!Validate.IsNrRNE(item.nroreggeral, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -296,7 +296,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list orgão emissor da RNE
+                  //  list orgão emissor da RNE
                     if (!Validate.IsOrgEmissorRNE(item.orgemissorrne, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -308,7 +308,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list data expedição RNE
+                  //  list data expedição RNE
                     if (!Validate.IsDtExpedicaoRNE(item.dtemissaorne, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -320,7 +320,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Nº Inscrição OC
+                   // list Nº Inscrição OC
                     if (!Validate.IsnrOc(item.nrOc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -332,7 +332,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Orgão emissor OC
+                    //list Orgão emissor OC
                     if (!Validate.IsOrgEmissorOc(item.orgaoEmissorOc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -344,7 +344,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Data de Expedição OC
+                  //  list Data de Expedição OC
                     if (!Validate.IsDtExpedOc(item.dtExpedicaoOc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -356,7 +356,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list data validade de Expedição OC
+                    //list data validade de Expedição OC
                     if (!Validate.IsDtValidOc(item.dtValidOc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -368,7 +368,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Nº Registro CNH
+                  //  list Nº Registro CNH
                     if (!Validate.IsNrRegCnh(item.nrRegCnh, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -380,7 +380,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Data Expedição CNH
+                   // list Data Expedição CNH
                     if (!Validate.IsDtExpCnh(item.dtExpCnh, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -392,7 +392,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list UF CNH
+                  //  list UF CNH
                     if (!Validate.IsUfCnh(item.ufCnh, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -404,8 +404,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list data validade CNH
-                    if (!Validate.IsDtValidCnh(item.dtValidCnh, out error))
+                   // list data validade CNH
+                   /* if (!Validate.IsDtValidCnh(item.dtValidCnh, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -414,9 +414,9 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
-                    list data Primeira CNH
+                  //  list data Primeira CNH
                     if (!Validate.IsDtPriHab(item.dtPriHab, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -428,7 +428,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Categoria CNH
+                  //  list Categoria CNH
                     if (!Validate.IsCategoriaCnh(item.categoriaCnh, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -441,7 +441,7 @@ namespace Portal.Business.Repositories
                     }
 
 
-                    list tipo Logradouro
+                   // list tipo Logradouro
                     if (!Validate.IstpLograd(item.cep, item.tpLograd, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -465,7 +465,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Nº Logradouro
+                  //  list Nº Logradouro
                     if (!Validate.IsnrLograd(item.nrLograd, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -477,7 +477,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Complemento Logradouro
+                   // list Complemento Logradouro
                     if (!Validate.Iscomplemento(item.complemento, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -489,7 +489,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Bairro Logradouro
+                    //list Bairro Logradouro
                     if (!Validate.Isbairro(item.cep, item.bairro, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -513,7 +513,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Codigo Municipio
+                   // list Codigo Municipio
                     if (!Validate.IsCodMunicipioEnd(item.cep, item.codMunicipio, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -525,7 +525,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list uf
+                  //  list uf
                     if (!Validate.IsUfEnd(item.cep, item.uf, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -537,9 +537,9 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    Exterior
+                  //  Exterior
 
-                    list País Residente Exterior
+                  //  list País Residente Exterior
                     if (!Validate.IsPaisResidExt(item.cod_pais, item.paisResidExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -551,7 +551,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Logradouro Residente Exterior
+                  //  list Logradouro Residente Exterior
                     if (!Validate.IsDesLogradExt(item.cod_pais, item.desLogradExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -563,7 +563,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list complemento Residente Exterior
+                   // list complemento Residente Exterior
                     if (!Validate.IsComplementoExt(item.cod_pais, item.complementoExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -575,7 +575,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list numero logradouro Residente Exterior
+                   // list numero logradouro Residente Exterior
                     if (!Validate.IsNrLogradExt(item.cod_pais, item.nrLogradExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -587,7 +587,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list bairro Residente Exterior
+                  //  list bairro Residente Exterior
                     if (!Validate.IsbairroExt(item.cod_pais, item.bairroExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -599,7 +599,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list cidade Residente Exterior
+                  //  list cidade Residente Exterior
                     if (!Validate.IsNmCidExt(item.cod_pais, item.nmCidExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -611,7 +611,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Codigo Postal Residente Exterior
+                  //  list Codigo Postal Residente Exterior
                     if (!Validate.IsCodPostalExt(item.cod_pais, item.codPostalExt, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -623,7 +623,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Data chegada Extrangeiro
+                  //  list Data chegada Extrangeiro
                     if (!Validate.IsDtChegadaEstrang(item.cod_pais, item.dtChegadaEstrang, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -635,8 +635,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Classe Extrangeiro
-                    if (!Validate.IsclassTrabaEstrang(item.cod_pais, item.classTrabaEstrang, out error))
+                  //  list Classe Extrangeiro
+                /*    if (!Validate.IsclassTrabaEstrang(item.cod_pais, item.classTrabaEstrang, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -645,9 +645,9 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
-                    list Casado com Brasileiro
+                  //  list Casado com Brasileiro
                     if (!Validate.IsCasadoBrEstrang(item.cod_pais, item.casadoBrEstrang, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -659,7 +659,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Filhos com Brasileiros
+                   // list Filhos com Brasileiros
                     if (!Validate.IsFilhosBrEstrang(item.cod_pais, item.filhosBrEstrang, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -671,7 +671,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list deficiencia fisica
+                  //  list deficiencia fisica
                     if (!Validate.IsDefFisico(item.defFisico, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -683,7 +683,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list deficiencia Visual
+                  //  list deficiencia Visual
                     if (!Validate.IsDefVisual(item.defVisual, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -695,7 +695,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list deficiencia Auditiva
+                   // list deficiencia Auditiva
                     if (!Validate.IsDefAuditivo(item.defAuditivo, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -707,7 +707,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list deficiencia Mental
+                    //list deficiencia Mental
                     if (!Validate.IsDefMental(item.defMental, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -719,7 +719,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list deficiencia Intelectual
+                   // list deficiencia Intelectual
                     if (!Validate.IsDefIntelectual(item.defIntelectual, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -731,8 +731,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Reabilitado
-                    if (!Validate.IsReabReadp(item.reabReadap, out error))
+                   // list Reabilitado
+                    /*if (!Validate.IsReabReadp(item.reabReadap, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -741,9 +741,9 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
-                    list Trabalhador Aposentado
+                  //  list Trabalhador Aposentado
                     if (!Validate.IsTrabAposent(item.trabAposent, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -755,7 +755,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Fone Principal
+                  //  list Fone Principal
                     if (!Validate.IsFonePrinc(item.fonePrinc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -767,7 +767,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Fone Alternativo
+                    //list Fone Alternativo
                     if (!Validate.IsFoneAlternat(item.foneAlternat, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -779,7 +779,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list E-mail principal
+                   // list E-mail principal
                     if (!Validate.IsEmailPrinc(item.emailPrinc, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -791,7 +791,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list e-mail alternartivo
+                  //  list e-mail alternartivo
                     if (!Validate.IsEmailAlternat(item.emailAlternat, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -803,7 +803,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list matricula
+                  //  list matricula
                     if (!Validate.IsMatricula(item.matricula, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -815,7 +815,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list tipo regime trabalhista
+                  //  list tipo regime trabalhista
                     if (!Validate.IsTpRegTrab(item.tpRegTrab, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -827,8 +827,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list tipo regime Previdenciario
-                    if (!Validate.IsTpRegPrev(item.tpRegPrev, out error))
+                   // list tipo regime Previdenciario
+                   /* if (!Validate.IsTpRegPrev(item.tpRegPrev, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -838,8 +838,8 @@ namespace Portal.Business.Repositories
                             nome_usuario = item.nome
                         });
                     }
-
-                    list tipo Data Adm
+                    */
+                   // list tipo Data Adm
                     if (!Validate.IsDtAdm(item.dtAdm, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -851,7 +851,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list tp Admissao
+                  //  list tp Admissao
                     if (!Validate.IsTpAdmissao(item.tpAdmissao, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -863,8 +863,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list indicativo Admissao
-                    if (!Validate.IsIndAdmissao(item.indAdmissao, out error))
+                   // list indicativo Admissao
+                   /* if (!Validate.IsIndAdmissao(item.indAdmissao, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -873,9 +873,9 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
-                    list Regime Jornada
+                 //   list Regime Jornada
                     if (!Validate.IsTpRegJor(item.tpRegJor, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -887,7 +887,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Natureza Atividade
+                 //   list Natureza Atividade
                     if (!Validate.IsNatAtividade(item.natAtividade, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -899,7 +899,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list data Base
+                 //   list data Base
                     if (!Validate.IsDtBase(item.dtBase, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -911,7 +911,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list cnpj sindicato
+                //    list cnpj sindicato
                     if (!Validate.IsCnpjSindCategProf(item.cnpjSindCategProf, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -923,8 +923,8 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list OPC FGTS
-                    if (!Validate.IsOpcFgts(item.opcFGTS, out error))
+                //    list OPC FGTS
+                  /*  if (!Validate.IsOpcFgts(item.opcFGTS, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -933,9 +933,9 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
-                    list Data OPC FGTS
+                //    list Data OPC FGTS
                     if (!Validate.IsDtOpcFgts(item.dtOpcFGTS, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -948,42 +948,42 @@ namespace Portal.Business.Repositories
                     }
 
                     //list Motivo Contratação
-                    if (!Validate.IsMtvContrat(item.mtvContrat, out error))
-                    {
-                        list_erros.Add(new ValidateUsuario
-                        {
-                            campo = "mtvContrat",
-                            erro = error,
-                            id_usuario = Convert.ToInt32(item.codigo),
-                            nome_usuario = item.nome
-                        });
-                    }
+                    /*  if (!Validate.IsMtvContrat(item.mtvContrat, out error))
+                      {
+                          list_erros.Add(new ValidateUsuario
+                          {
+                              campo = "mtvContrat",
+                              erro = error,
+                              id_usuario = Convert.ToInt32(item.codigo),
+                              nome_usuario = item.nome
+                          });
+                      }
 
-                    //list Tipo Inscrição
-                    if (!Validate.IsTpInsc(item.tpInsc, out error))
-                    {
-                        list_erros.Add(new ValidateUsuario
-                        {
-                            campo = "tpInscTemp",
-                            erro = error,
-                            id_usuario = Convert.ToInt32(item.codigo),
-                            nome_usuario = item.nome
-                        });
-                    }
+                      //list Tipo Inscrição
+                      if (!Validate.IsTpInsc(item.tpInsc, out error))
+                      {
+                          list_erros.Add(new ValidateUsuario
+                          {
+                              campo = "tpInscTemp",
+                              erro = error,
+                              id_usuario = Convert.ToInt32(item.codigo),
+                              nome_usuario = item.nome
+                          });
+                      }
 
-                    //list numero CNPJ ou CPF
-                    if (!Validate.IsNrInsc(item.tpInsc, item.nrInsc, out error))
-                    {
-                        list_erros.Add(new ValidateUsuario
-                        {
-                            campo = "nrInscTemp",
-                            erro = error,
-                            id_usuario = Convert.ToInt32(item.codigo),
-                            nome_usuario = item.nome
-                        });
-                    }
-
-                    list numero CPF subsituto
+                      //list numero CNPJ ou CPF
+                      if (!Validate.IsNrInsc(item.tpInsc, item.nrInsc, out error))
+                      {
+                          list_erros.Add(new ValidateUsuario
+                          {
+                              campo = "nrInscTemp",
+                              erro = error,
+                              id_usuario = Convert.ToInt32(item.codigo),
+                              nome_usuario = item.nome
+                          });
+                      }
+                      */
+                    //   list numero CPF subsituto
                     if (!Validate.IsCpfTrabSubst(item.cpfTrabSubst, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -995,7 +995,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list Matricula
+               //     list Matricula
                     if (!Validate.IsmatricTrabSubst(item.matricTrabSubst, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -1008,7 +1008,7 @@ namespace Portal.Business.Repositories
                     }
 
                     //list Provimento
-                    if (!Validate.IsIndProvim(item.indProvim, out error))
+                 /*   if (!Validate.IsIndProvim(item.indProvim, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -1017,7 +1017,7 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
                     //list Tipo Provimento
                     if (!Validate.IsTpAdmissao(item.tpProv, out error))
@@ -1030,7 +1030,7 @@ namespace Portal.Business.Repositories
                             nome_usuario = item.nome
                         });
                     }
-
+                    /*
                     //list Data Nomeação
                     if (!Validate.IsDtNomeacao(item.dtNomeacao, out error))
                     {
@@ -1102,8 +1102,8 @@ namespace Portal.Business.Repositories
                             nome_usuario = item.nome
                         });
                     }
-
-                    list valor Salario Fixo
+                    */
+                 //   list valor Salario Fixo
                     if (!Validate.IsVrSalFx(item.vrSalFx, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -1115,7 +1115,7 @@ namespace Portal.Business.Repositories
                         });
                     }
 
-                    list unidade Salario Fixo
+                 //   list unidade Salario Fixo
                     if (!Validate.IsUndSalFixo(item.undSalFixo, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -1152,7 +1152,7 @@ namespace Portal.Business.Repositories
                     }
 
                     //list Término do Contrato
-                    if (!Validate.IsDtTerm(item.tpContr, item.dtTerm, out error))
+                 /*   if (!Validate.IsDtTerm(item.tpContr, item.dtTerm, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -1162,7 +1162,7 @@ namespace Portal.Business.Repositories
                             nome_usuario = item.nome
                         });
                     }
-
+                    */
                     //list Tipo de inscrição
                     if (!Validate.IsTpInscLocalTrab(item.tpInscLocalTrab, out error))
                     {
@@ -1320,6 +1320,7 @@ namespace Portal.Business.Repositories
                     }
 
                     //list Descrição de jornada
+                    /*
                     if (!Validate.IsDscTpJorn(item.tpJornada, item.dscTpJorn, item.tpRegJor, out error))
                     {
                         list_erros.Add(new ValidateUsuario
@@ -1329,7 +1330,7 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
                     //list Dia
                     if (!Validate.IsDia(item.dia, item.tpRegJor, out error))
@@ -1440,7 +1441,7 @@ namespace Portal.Business.Repositories
                     }
 
                     //list Data Desligamento
-                    if (!Validate.IsDtDeslig(item.dtDeslig, out error))
+                  /*  if (!Validate.IsDtDeslig(item.dtDeslig, out error))
                     {
                         list_erros.Add(new ValidateUsuario
                         {
@@ -1449,7 +1450,7 @@ namespace Portal.Business.Repositories
                             id_usuario = Convert.ToInt32(item.codigo),
                             nome_usuario = item.nome
                         });
-                    }
+                    }*/
 
 
                 }
