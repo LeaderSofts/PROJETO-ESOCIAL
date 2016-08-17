@@ -95,7 +95,7 @@ public final class Teste_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
 
          //String infor = request.getParameter("txtNome");
-         int infos=0;
+         int id=0;
          String val="";
          String user="sa";
          String pass="foxplan";
@@ -108,63 +108,130 @@ public final class Teste_jsp extends org.apache.jasper.runtime.HttpJspBase
          PreparedStatement pstmt = con.prepareStatement(sql);
          ResultSet reset = pstmt.executeQuery();
          int i = 0;
-         while(reset.next() ){
+         if(reset.next() ){
             val=reset.getString("NOME");
-            infos=reset.getInt("COD_PESSOA");
-           //if( i <= 3){
-            //javax.swing.JOptionPane.showMessageDialog(null,"Nome: " + val);
-            //javax.swing.JOptionPane.showMessageDialog(null,"Id: " + infos);
-            //System.out.println("Nome: " + val);
-           //}
-           i++;
+            id=reset.getInt("COD_PESSOA");
          }
          String a=val;
-         int b=infos;
-         //javax.swing.JOptionPane.showMessageDialog(null, "Val: "+a+ " Infos: " +b );
+         int b=id;
         
       out.write("\n");
-      out.write("        <!-- CÓDIGO JAVA QUE SETA O VALOR NA INPUT_TEXT -->\n");
-      out.write("        ");
- 
-         //request.setAttribute("nomeInfo", valor);
-         String valor="";         
-         //String sqlTmp0="SELECT dbo.PPESSOA.Codigo [COD_PESSOA], dbo.PPESSOA.NOME AS [NOME], dbo.PPESSOA.REGPROFISSIONAL [REGPREV] FROM PPESSOA, PFUNC WHERE PPESSOA.NOME='"+request.getParameter("txtNome")+"' AND PPESSOA.CODIGO = PFUNC.CODPESSOA";
-         String sqlTmp1="SELECT dbo.PPESSOA.Codigo [COD_PESSOA], dbo.PPESSOA.NOME AS [NOME], dbo.PPESSOA.REGPROFISSIONAL [REGPREV] FROM PPESSOA, PFUNC WHERE PPESSOA.NOME='"+a+"' AND PPESSOA.CODIGO = PFUNC.CODPESSOA";
-         pstmt = con.prepareStatement(sqlTmp1);
-         reset = pstmt.executeQuery();
-         if(reset.next() == true){
+      out.write("        <!-- CÓDIGO JAVA QUE SETA O VALOR NA INPUT_TEXT -->        \n");
+      out.write("          ");
+
+            String matri="";
+            String tipoRegPrev="";
+            String tipoRegtrab="";
+            String tipoTrabalhador="";
+            String nome="";
+            String dtNascto="";
+            String corRaca="";
+            String nacionalidade="";
+            String estadoNatal="";
+            String naturalidade="";
+              
+           String sqlView = "SELECT * FROM View1";
+            pstmt = con.prepareStatement(sqlView);
+            reset = pstmt.executeQuery();
+            
+            if( reset.next() ){
+                matri=reset.getString("MATRI");
+                tipoRegPrev=reset.getString("TPREGPREV");
+                //String tipoRegtrab=reset.getString("TPREGTRAB");
+                tipoTrabalhador=reset.getString("TIPOTRAB");
+                nome=reset.getString("NOME");
+                dtNascto=reset.getString("DATANASCIMENTO");
+                corRaca=reset.getString("CORRACA");
+                nacionalidade=reset.getString("NACIONALIDADE");
+                estadoNatal=reset.getString("ESTADONATAL");
+                naturalidade=reset.getString("NATURALIDADE");
+                System.out.println(matri);
+                System.out.println(tipoRegPrev);
+                //System.out.println(tipoRegtrab);
+                System.out.println(tipoTrabalhador);
+                System.out.println(nome);
+                System.out.println(dtNascto);
+                System.out.println(corRaca);
+                System.out.println(nacionalidade);
+                System.out.println(estadoNatal);
+                System.out.println(naturalidade);
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(null, "No more rows!");
+            }
+            
           
-      out.write(" <p> ");
-      out.print(reset.getString("NOME"));
-      out.write(' ');
-valor=reset.getString("NOME"); javax.swing.JOptionPane.showMessageDialog(null, valor + "El Shaday! Kadosh!");}else{
-          javax.swing.JOptionPane.showMessageDialog(null,"Falha na consulta... " + "o nome é " + val.trim() + " Id: " + infos);
-          javax.swing.JOptionPane.showMessageDialog(null, "Sem mais índices!");
-} 
-      out.write(" </p>\n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("\n");
       out.write("        \n");
       out.write("        <h1>Admissão de Trabalhador</h1>\n");
       out.write("        <form name=\"form1\" method=\"post\" action=\"trabalhadores.jsp\">\n");
       out.write("            \n");
-      out.write("            <p> <label id=\"1\" > ID: </label> \n");
-      out.write("                <input type=\"text\" id=\"id\"  name=\"txtId\"  size=\"40\" maxlength=\"40\" value=\"");
- out.println(infos); 
-      out.write("\">\n");
-      out.write("            </p>\n");
       out.write("            \n");
-      out.write("            <p> <label id=\"2\" > NOME: </label>\n");
-      out.write("               <input type=\"text\" id=\"nome\" name=\"txtInfo\" size=\"40\" maxlength=\"40\" value=\"");
+      out.write("            <p> <label id=\"lblMatri\" > MATRÍCULA: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtMatri\" size=\"40\" maxlength=\"40\" value=\"");
  out.println(val); 
       out.write("\">\n");
       out.write("            </p>\n");
       out.write("            \n");
+      out.write("            <p> <label id=\"lblRegPrev\" > TIPO DE REGIME PREVIDENCIÁRIO: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtRegPrev\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(tipoRegPrev); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblRegTrab\" > TIPO DE REGIME TRABALHISTA: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtRegTrab\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(tipoRegtrab); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblTipoTrab\" > TIPO DE TRABALHADOR: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtTipoTrab\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(tipoTrabalhador); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblNome\" > NOME: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtNome\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(nome); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblDtnascto\" > DATA DE NASCIMENTO: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtDtnascto\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(dtNascto); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblDtnascto\" > COR/RAÇA: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtCorRaca\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(corRaca); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblDtnascto\" > NACIONALIDADE: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtNacionalidade\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(nacionalidade); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblDtnascto\" > ESTADO NATAL: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtEstadoNatal\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(estadoNatal); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            <p> <label id=\"lblDtnascto\" > NATURALIDADE: </label>\n");
+      out.write("               <input type=\"text\" id=\"nome\" name=\"txtEstadoNatal\" size=\"40\" maxlength=\"40\" value=\"");
+ out.println(naturalidade); 
+      out.write("\">\n");
+      out.write("            </p>\n");
+      out.write("            \n");
+      out.write("            \n");
       out.write("            <p>\n");
       out.write("                <input type=\"button\" name=\"mostrar\" id=\"mostrar\" value=\"Enviar\" onclick=\"novoArquivo()\" >\n");
       out.write("                <input type=\"button\" name=\"trab\" id=\"id2\" value=\"Trabalhadores\" onclick=\"nova()\" >\n");
-      out.write("                <input type=\"button\" name=\"trab\" id=\"id2\" value=\"Trabalhadores\" onclick=\"nova()\" >\n");
-      out.write("                <>\n");
+      out.write("\n");
+      out.write("                >\n");
       out.write("            </p>\n");
       out.write("            \n");
       out.write("        </form>\n");

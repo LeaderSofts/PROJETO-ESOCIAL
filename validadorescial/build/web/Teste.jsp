@@ -49,7 +49,7 @@
         <!-- CÓDIGO JAVA QUE FAZ A CONEXÃO COM A BASE DE DADOS E QUERY-->        
         <%
          //String infor = request.getParameter("txtNome");
-         int infos=0;
+         int id=0;
          String val="";
          String user="sa";
          String pass="foxplan";
@@ -62,52 +62,107 @@
          PreparedStatement pstmt = con.prepareStatement(sql);
          ResultSet reset = pstmt.executeQuery();
          int i = 0;
-         while(reset.next() ){
+         if(reset.next() ){
             val=reset.getString("NOME");
-            infos=reset.getInt("COD_PESSOA");
-           //if( i <= 3){
-            //javax.swing.JOptionPane.showMessageDialog(null,"Nome: " + val);
-            //javax.swing.JOptionPane.showMessageDialog(null,"Id: " + infos);
-            //System.out.println("Nome: " + val);
-           //}
-           i++;
+            id=reset.getInt("COD_PESSOA");
          }
          String a=val;
-         int b=infos;
-         //javax.swing.JOptionPane.showMessageDialog(null, "Val: "+a+ " Infos: " +b );
+         int b=id;
         %>
-        <!-- CÓDIGO JAVA QUE SETA O VALOR NA INPUT_TEXT -->
-        <% 
-         //request.setAttribute("nomeInfo", valor);
-         String valor="";         
-         //String sqlTmp0="SELECT dbo.PPESSOA.Codigo [COD_PESSOA], dbo.PPESSOA.NOME AS [NOME], dbo.PPESSOA.REGPROFISSIONAL [REGPREV] FROM PPESSOA, PFUNC WHERE PPESSOA.NOME='"+request.getParameter("txtNome")+"' AND PPESSOA.CODIGO = PFUNC.CODPESSOA";
-         String sqlTmp1="SELECT dbo.PPESSOA.Codigo [COD_PESSOA], dbo.PPESSOA.NOME AS [NOME], dbo.PPESSOA.REGPROFISSIONAL [REGPREV] FROM PPESSOA, PFUNC WHERE PPESSOA.NOME='"+a+"' AND PPESSOA.CODIGO = PFUNC.CODPESSOA";
-         pstmt = con.prepareStatement(sqlTmp1);
-         reset = pstmt.executeQuery();
-         if(reset.next() == true){
-          %> <p> <%=reset.getString("NOME")%> <%valor=reset.getString("NOME"); javax.swing.JOptionPane.showMessageDialog(null, valor + "El Shaday! Kadosh!");}else{
-          javax.swing.JOptionPane.showMessageDialog(null,"Falha na consulta... " + "o nome é " + val.trim() + " Id: " + infos);
-          javax.swing.JOptionPane.showMessageDialog(null, "Sem mais índices!");
-} %> </p>
-        
-        
+        <!-- CÓDIGO JAVA QUE SETA O VALOR NA INPUT_TEXT -->        
+          <%
+            String matri="";
+            String tipoRegPrev="";
+            String tipoRegtrab="";
+            String tipoTrabalhador="";
+            String nome="";
+            String dtNascto="";
+            String corRaca="";
+            String nacionalidade="";
+            String estadoNatal="";
+            String naturalidade="";
+              
+           String sqlView = "SELECT * FROM View1";
+            pstmt = con.prepareStatement(sqlView);
+            reset = pstmt.executeQuery();
+            
+            if( reset.next() ){
+                matri=reset.getString("MATRI");
+                tipoRegPrev=reset.getString("TPREGPREV");
+                //String tipoRegtrab=reset.getString("TPREGTRAB");
+                tipoTrabalhador=reset.getString("TIPOTRAB");
+                nome=reset.getString("NOME");
+                dtNascto=reset.getString("DATANASCIMENTO");
+                corRaca=reset.getString("CORRACA");
+                nacionalidade=reset.getString("NACIONALIDADE");
+                estadoNatal=reset.getString("ESTADONATAL");
+                naturalidade=reset.getString("NATURALIDADE");
+                System.out.println(matri);
+                System.out.println(tipoRegPrev);
+                //System.out.println(tipoRegtrab);
+                System.out.println(tipoTrabalhador);
+                System.out.println(nome);
+                System.out.println(dtNascto);
+                System.out.println(corRaca);
+                System.out.println(nacionalidade);
+                System.out.println(estadoNatal);
+                System.out.println(naturalidade);
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(null, "No more rows!");
+            }
+            
+          %>
         
         <h1>Admissão de Trabalhador</h1>
         <form name="form1" method="post" action="trabalhadores.jsp">
             
-            <p> <label id="1" > ID: </label> 
-                <input type="text" id="id"  name="txtId"  size="40" maxlength="40" value="<% out.println(infos); %>">
+            
+            <p> <label id="lblMatri" > MATRÍCULA: </label>
+               <input type="text" id="nome" name="txtMatri" size="40" maxlength="40" value="<% out.println(val); %>">
             </p>
             
-            <p> <label id="2" > NOME: </label>
-               <input type="text" id="nome" name="txtInfo" size="40" maxlength="40" value="<% out.println(val); %>">
+            <p> <label id="lblRegPrev" > TIPO DE REGIME PREVIDENCIÁRIO: </label>
+               <input type="text" id="nome" name="txtRegPrev" size="40" maxlength="40" value="<% out.println(tipoRegPrev); %>">
             </p>
+            
+            <p> <label id="lblRegTrab" > TIPO DE REGIME TRABALHISTA: </label>
+               <input type="text" id="nome" name="txtRegTrab" size="40" maxlength="40" value="<% out.println(tipoRegtrab); %>">
+            </p>
+            
+            <p> <label id="lblTipoTrab" > TIPO DE TRABALHADOR: </label>
+               <input type="text" id="nome" name="txtTipoTrab" size="40" maxlength="40" value="<% out.println(tipoTrabalhador); %>">
+            </p>
+            
+            <p> <label id="lblNome" > NOME: </label>
+               <input type="text" id="nome" name="txtNome" size="40" maxlength="40" value="<% out.println(nome); %>">
+            </p>
+            
+            <p> <label id="lblDtnascto" > DATA DE NASCIMENTO: </label>
+               <input type="text" id="nome" name="txtDtnascto" size="40" maxlength="40" value="<% out.println(dtNascto); %>">
+            </p>
+            
+            <p> <label id="lblDtnascto" > COR/RAÇA: </label>
+               <input type="text" id="nome" name="txtCorRaca" size="40" maxlength="40" value="<% out.println(corRaca); %>">
+            </p>
+            
+            <p> <label id="lblDtnascto" > NACIONALIDADE: </label>
+               <input type="text" id="nome" name="txtNacionalidade" size="40" maxlength="40" value="<% out.println(nacionalidade); %>">
+            </p>
+            
+            <p> <label id="lblDtnascto" > ESTADO NATAL: </label>
+               <input type="text" id="nome" name="txtEstadoNatal" size="40" maxlength="40" value="<% out.println(estadoNatal); %>">
+            </p>
+            
+            <p> <label id="lblDtnascto" > NATURALIDADE: </label>
+               <input type="text" id="nome" name="txtEstadoNatal" size="40" maxlength="40" value="<% out.println(naturalidade); %>">
+            </p>
+            
             
             <p>
                 <input type="button" name="mostrar" id="mostrar" value="Enviar" onclick="novoArquivo()" >
                 <input type="button" name="trab" id="id2" value="Trabalhadores" onclick="nova()" >
-                <input type="button" name="trab" id="id2" value="Trabalhadores" onclick="nova()" >
-                <>
+
+                >
             </p>
             
         </form>
