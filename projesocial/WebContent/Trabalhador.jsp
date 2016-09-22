@@ -1973,69 +1973,6 @@
    
     </script>
     
-    <script type="text/javascript">
-    
-    var nacionalTmp='';
-    //var jsTmpVerNacionalidade=document.getElementById('nacionalidadeTx').value;
-        
-    function veriPaisNacionalidade(jsTmpVerNacionalidade){
-        
-        var retornoNacionalidade=false;
-               
-        <%
-        String jVerNacionalidade=nome;
-        String sql1 = "SELECT * FROM paises";
-        PreparedStatement ps = con.prepareStatement(sql1);
-        ResultSet reset1 = ps.executeQuery();
-        
-        try{
-            int contInterno=0;
-            if( reset1.next() ){
-                contInterno+=1;
-                jVerNacionalidade=reset1.getString("idpais");
-                //System.out.println("País "+ jVerNacionalidade );
-        %>
-                   nacionalTmp=<%=jVerNacionalidade%>
-                   if(nacionalTmp===jsTmpVerNacionalidade){
-                        //alert('Ok, país...' +jsTmpVerNacionalidade +' ...' + nacionalTmp );
-                        retornoNacionalidade=true;
-                   }else{
-                        //console.log( nacionalTmp );
-                        //alert( 'País...' +jsTmpVerNacionalidade +' ...' + nacionalTmp );
-                   }
-        <%        
-                while( reset1.next() ){
-                    jVerNacionalidade=reset1.getString("idpais");
-                    //System.out.println("País "+ jVerNacionalidade );
-                    contInterno+=1;
-        %>      
-                    nacionalTmp=<%=jVerNacionalidade%>
-                    if(nacionalTmp===jsTmpVerNacionalidade){
-                        //alert('Ok, país...' +jsTmpVerNacionalidade +' ...' + nacionalTmp );
-                        retornoNacionalidade=true;
-                    }else{
-                        //console.log( nacionalTmp );
-                        //alert( 'País...' +jsTmpVerNacionalidade +' ...' + nacionalTmp );
-                    }
-        <%
-                } 
-                //javax.swing.JOptionPane.showMessageDialog(null, "Tamanho da lista de países:" +contInterno);
-            }else{
-                //System.out.println("X-X-X-X");
-            }
-        }catch(SQLException sqlexc){
-            sqlexc.fillInStackTrace();
-            //javax.swing.JOptionPane.showMessageDialog(null, "Exception @ "+sqlexc.getMessage() );
-        }
-        finally{
-            //reset1.close();
-            System.out.println("ResultSet is closed yet!");
-        }
-        %>
-            return retornoNacionalidade;
-    }
-    </script>
-    
     <input type="button" id="bt3" name="btn4" value="Validar" onclick="validaCampo()">
     <input type="button" id="bt7" name="btn8" value="Nacionalidade" onclick="veriPaisNacionalidade('Brasil')">
 
